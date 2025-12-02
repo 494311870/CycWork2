@@ -19,6 +19,7 @@ class ResultsVerifier:
         self.excel_file = excel_file
         self.issues = []
         self.passed_checks = []
+        self.output_dir = '/home/runner/work/CycWork2/CycWork2'
         
     def log_issue(self, issue_description):
         """记录问题"""
@@ -111,7 +112,7 @@ class ResultsVerifier:
             self.log_pass(f"标准误计算公式正确: Std Err = Std / √N × 10000")
         
         # 检查T检验
-        if all([r['p_value'] is not np.nan for r in results_q1_1]):
+        if all([pd.notna(r['p_value']) for r in results_q1_1]):
             self.log_pass("T检验计算完成，使用独立样本双尾检验")
         
         # 3. 验证套利策略收益
@@ -433,10 +434,11 @@ class ResultsVerifier:
         
         report_text = "\n".join(report_lines)
         
-        with open('/home/runner/work/CycWork2/CycWork2/验证报告.txt', 'w', encoding='utf-8') as f:
+        report_path = f'{self.output_dir}/验证报告.txt'
+        with open(report_path, 'w', encoding='utf-8') as f:
             f.write(report_text)
         
-        print("\n详细验证报告已保存至: 验证报告.txt")
+        print(f"\n详细验证报告已保存至: {report_path}")
         
         return len(self.issues) == 0
 
