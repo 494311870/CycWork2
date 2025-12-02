@@ -9,6 +9,10 @@ This is a quantitative finance project focused on implementing index inclusion e
   - `作业3 （学生用）指数纳入效应套利策略的实现.xlsx` - Data analysis and calculations
 - **Development Stage**: This project is in early stages, currently containing specification documents
 
+## 使用中文输出结果
+
+## 在文档/输出的结果中，需要给出详细的计算公式，如何用Excel之类的方式实现，并给出清晰的步骤说明。不允许只提供代码。
+
 ## Expected Development Patterns
 
 ### Code Organization
@@ -59,42 +63,6 @@ When implementing code for this project, expect to create:
 3. Implement data ingestion pipeline first
 4. Develop strategy logic incrementally with proper testing
 5. Create visualization tools for strategy performance analysis
-
-
-
-## Submit log specifications
-
-为保证历史清晰与自动化（例如生成变更日志、触发 CI 分支规则），本项目遵循基于 "Conventional Commits" 的简化规范：
-
-- 格式：
-
-    <type>(<scope>): <short summary>
-
-    - type（必需）：feat | fix | docs | style | refactor | perf | test | chore | build | ci | revert
-    - scope（可选）：受影响模块或目录，例如 `assets`, `scripts`, `scenes`, `ui`。
-    - short summary（必需）：总长不超过 72 个字符，首字母小写，不以句号结束。
-
-- 主体（可选）：空行后写更详细的变更说明。行宽建议 100 字以内。
-
-- 页脚（可选）：用于引用 issue 或标注 BREAKING CHANGE。例如：
-
-
-        BREAKING CHANGE: 描述破坏性变更的简要说明
-
-        或者引用 issue：
-
-            `Fixes Issue-123`, `See Issue-45`
-
-- 示例：
-
-- 示例（type 保持英文，日志内容请使用中文）：
-
-    feat(scripts): 添加 TileSpawner 组件以生成方格
-
-    fix(ui): 修复小屏幕下按钮布局溢出问题
-
-    docs: 更新 README，补充 Cocos Creator 3.8.7 的构建步骤说明
-
 
 ---
 *This workspace is configured for quantitative finance development. When implementing features, prioritize data integrity, computational efficiency, and proper statistical methodology.*
